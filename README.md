@@ -43,3 +43,61 @@ touch Progress-Log.md
 git add .
 git commit -m "chore: bootstrap mind repository structure"
 git push -u origin main
+
+2) 캡처 & 확장
+
+Capture: 이동 중 떠오른 생각을 Google Keep에 기록
+Synthesize: Gemini와 대화하며 아이디어 확장 → Google Docs에서 구조화
+Convert: Docs를 Markdown으로 변환(예: Docs to Markdown 부가 기능) 후 inbox/ 또는 drafts/에 저장
+Commit: 변화 맥락을 담은 커밋 메시지로 저장 (예: feat(drafts): add argument on agent ethics (#insight))
+
+
+✍️ 문서 템플릿 (Markdown Template)
+---
+title: "에이전트 윤리: 도구인가, 행위자인가"
+date: 2026-01-05
+labels: ["insight", "ethics", "ai"]
+status: "draft"       # draft | review | publish-ready | published
+links:
+  - ref: "논문/기사 링크"
+  - ref: "관련 토론 스레드"
+---
+
+## 핵심 요지
+- 요지 1
+- 요지 2
+
+## 본문
+(핵심 주장, 논거, 반례, 사례, 시사점)
+
+## 다음 액션
+- [ ] 추가 자료 조사
+- [ ] 반론 섹션 보강
+- [ ] 도표/이미지 추가
+
+🧭 워크플로 (Workflow)
+Capture → Synthesize → Commit → Merge & Evolve
+
+Small Commits: 작은 단위로 자주 커밋해 사고의 변화 경로를 남깁니다.
+Meaningful Messages: “왜 바뀌었는지” 맥락을 담아 커밋을 기록합니다.
+Branching Thoughts: 상이한 관점/구성은 브랜치로 실험합니다.
+
+
+# 기능/관점 브랜치 생성
+git checkout -b feature/agent-ethics-alt-view
+
+# 편집/추가 후 커밋
+git add drafts/20260105-agent-ethics.md
+git commit -m "feat(drafts): add counter-argument on agent moral status"
+
+# 원격 푸시 & PR 생성
+git push -u origin feature/agent-ethics-alt-view
+# GitHub에서 Compare & Pull Request → 자기 리뷰 → 코멘트 반영 → Merge
+``
+
+
+
+
+
+
+
